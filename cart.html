@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+   <div class="nav">
+    <div class="up">
+        <div class="logo hov">
+          <a href="index.html">  <img src="./TRENDS.jpg" alt=""></a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="enter">
+            <button class="hov"> <i class="fa-solid fa-magnifying-glass"></i></button>
+           
+        </div>
+        <div class="empty">
+        </div>
+    </div>
+    <div class="submenu">
+        <div class="category hov"><i class="fas fa-bars hov"></i> Categorie
+     
+        <div class="sub">
+           <ul>
+                <li>Gift Center</li>
+                <li>Clothes</li>
+                <li>Shoes</li>
+                <li>Beauty</li>
+                <li>Home</li>
+                <li>Electronics</li>
+                <li>Health & Nutrition</li>
+                <li>Jewelry</li>
+                <li>Kids</li>
+                <li>Sports</li>
+            </ul>
+        </div>
+        </div>
+        <div class="subcategory">
+            <div class="hov">
+                <a href="mens.html" id="link">Mens</a>
+                
+
+                <div class="sub">
+                    
+                <ul>
+                    <li>shoes</li>
+                    <li>grooming</li>
+                    <li>hair products</li>
+                    <li>clothes</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="hov">Womens
+            <div class="sub">
+                    
+                <ul>
+                    <li>shoes</li>
+                    <li>grooming</li>
+                    <li>hair products</li>
+                    <li>clothes</li>
+                </ul>
+                </div>
+            </div>
+            <div class="hov">Clothes
+
+                <div class="sub">
+                    
+                    <ul>
+                        <li>Mens</li>
+                        <li>Womens</li>
+                        <li>Kids</li>
+                        <li>Trending</li>
+                        <li>Celeb Look</li>
+                       
+                    </ul>
+                    </div>
+            </div>
+            <div class="hov">Shoes
+                <div class="sub">
+                    
+                    <ul>
+                        <li>Mens</li>
+                        <li>Womens</li>
+                        <li>Kids</li>
+                        <li>Trending</li>
+                        <li>Celeb Look</li>
+                       
+                    </ul>
+                    </div>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="hov"><i class="fa-regular fa-heart"></i></div>
+            <div class="hov"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="hov"><i class="fa-solid fa-user"></i></div>
+        </div>
+    </div>
+   </div>
+
+   <div class="main"></div>
+
+   </body>
+   </html>
+<script>
+    let cart_arr=JSON.parse(localStorage.getItem("cart"))||[]
+    console.log(cart_arr)
+
+    display_cards(cart_arr)
+    
+function display_cards(res){
+
+
+    console.log(res)
+
+
+    document.querySelector(".main").innerHTML=""
+res.forEach((elem,i)=>{
+
+    let card=document.createElement("div")
+    card.setAttribute("class","card")
+    let image=document.createElement("img")
+    image.setAttribute("src",elem.pic)
+
+    let brand=document.createElement("p")
+    brand.innerText=elem.des
+    brand.style.fontWeight="1000"
+    let item=document.createElement("p")
+    item.innerText=elem.name
+    item.style.fontWeight="1000"
+    let price=document.createElement("p")
+    price.innerText=elem.price+" ₹"
+    price.style.fontWeight="1000"
+    let rating=document.createElement("p")
+    rating.innerText="rating : "+elem.rating
+    rating.style.fontWeight="1000"
+   
+    let add=document.createElement("button")
+    add.innerText="Remove"
+
+  add.addEventListener("click",()=>{
+        // console.log(elem)
+        // cart_arr.push(elem)
+        // console.log(cart_arr)
+        del(elem,i)
+      
+  })
+    
+    card.append(image,brand,item,price,rating,add)
+
+    document.querySelector(".main").append(card)
+})
+
+}
+
+function del(elem,i){
+    cart_arr.splice(i,1)
+    
+    
+    localStorage.setItem("cart",JSON.stringify(cart_arr))
+
+    display_cards(cart_arr)
+}
+
+</script>

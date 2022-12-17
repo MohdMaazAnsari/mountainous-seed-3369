@@ -97,7 +97,9 @@
         </div>
         <div class="icons">
             <div class="hov"><i class="fa-regular fa-heart"></i></div>
-            <div class="hov"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="hov"><i class="fa-solid fa-cart-shopping"></i>
+           </div>
+           <span class="show_count"></span>
             <div class="hov"><i class="fa-solid fa-user"></i></div>
         </div>
     </div>
@@ -108,14 +110,17 @@
    </body>
    </html>
 <script>
+     let count=0;
     let cart_arr=JSON.parse(localStorage.getItem("cart"))||[]
     console.log(cart_arr)
 
     display_cards(cart_arr)
-    
+   
+
 function display_cards(res){
-
-
+count=res.length
+document.querySelector(".show_count").innerText=count
+console.log(count)
     console.log(res)
 
 

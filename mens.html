@@ -122,6 +122,21 @@
 
 <!-- filter -->
 
+<!-- sorting -->
+
+
+
+
+    <select name="" id="sorting">
+        <option value="">Sort By Price</option>
+        <option value="h2l">High to Low</option>
+        <option value="l2h">Low to High</option>
+    </select>
+
+
+
+
+<!-- sorting -->
 
        <div class="main">
       
@@ -180,7 +195,7 @@ res.forEach((elem,i)=>{
         console.log(elem)
         cart_arr.push(elem)
         console.log(cart_arr)
-    
+    alert("item added to cart")
         count=cart_arr.length
         // console.log(count)
         document.querySelector(".show_count").innerText=count

@@ -160,7 +160,7 @@ grid-template-columns: repeat(5,1fr);
 
 
 .sub{
-    display:none
+    display:none;
 }
 
 .submenu .hov:hover .sub{

@@ -97,10 +97,108 @@
             </div>
             <div class="icons">
                 <div class="hov"><i class="fa-regular fa-heart"></i></div>
-                <div class="hov"><i class="fa-solid fa-cart-shopping"></i></div>
+
+                <div class="hov"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+
                 <div class="hov"><i class="fa-solid fa-user"></i></div>
             </div>
         </div>
        </div>
+
+
+<!-- filter -->
+
+
+<select name="filter by name" id="filtering">
+    <option value="Select">Filter by name</option>
+    <option value="Adidas">Adidas</option>
+    <option value="Nike">Nike</option>
+    <option value="Puma">Puma</option>
+</select>
+
+
+<!-- filter -->
+
+
+       <div class="main">
+      
+       </div>
+
+
+
+
 </body>
 </html>
+
+<script>
+    let data=fetch("input.json")
+    let fil_arr=[]
+    data.then((resolve)=>{
+        return resolve.json()
+    }).then((res)=>{
+        console.log(res)
+        fil_arr=res
+        console.log(fil_arr)
+        display_cards(res)
+    })
+
+let cart_arr=JSON.parse(localStorage.getItem("cart"))||[]
+
+
+function display_cards(res){
+    document.querySelector(".main").innerHTML=""
+res.forEach((elem,i)=>{
+
+    let card=document.createElement("div")
+    card.setAttribute("class","card")
+    let image=document.createElement("img")
+    image.setAttribute("src",elem.pic)
+
+    let brand=document.createElement("p")
+    brand.innerText=elem.des
+    brand.style.fontWeight="1000"
+    let item=document.createElement("p")
+    item.innerText=elem.name
+    item.style.fontWeight="1000"
+    let price=document.createElement("p")
+    price.innerText=elem.price+" ₹"
+    price.style.fontWeight="1000"
+    let rating=document.createElement("p")
+    rating.innerText="rating : "+elem.rating
+    rating.style.fontWeight="1000"
+   
+    let add=document.createElement("button")
+    add.innerText="Add to Cart"
+
+  add.addEventListener("click",()=>{
+        console.log(elem)
+        cart_arr.push(elem)
+        console.log(cart_arr)
+        localStorage.setItem("cart",JSON.stringify(cart_arr))
+  })
+    
+    card.append(image,brand,item,price,rating,add)
+
+    document.querySelector(".main").append(card)
+})
+
+}
+
+
+// filtering---------------------------
+
+document.querySelector("#filtering").addEventListener("change",(e)=>{
+    let filtered_arr=fil_arr.filter(function(el,i){
+        if(el.des===document.querySelector("#filtering").value){
+            // console.log(el.des+"**"+e.target.value)
+            return true
+        }
+        
+    })
+    console.log(filtered_arr)
+    display_cards(filtered_arr)
+})
+
+
+
+</script>

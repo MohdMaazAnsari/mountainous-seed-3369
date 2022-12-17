@@ -159,8 +159,8 @@ background-color: yellow;
 
     button{
         border:0px;
-        color:goldenrod;
-        background-color: rgb(53, 59, 62);
+        color:rgb(0, 0, 0);
+        background-color: rgb(145, 134, 70);
         border-radius: 40px;
         width:50%;
         padding:5px;
@@ -174,19 +174,4 @@ background-color: yellow;
     }
     .main{
         margin-top:30px;
-    }
-
-    #filtering{
-        margin-top:30px;
-        margin-left:50px;
-        border:0px;
-        background-color: rgb(123, 176, 158);
-        padding:5px 20px 5px 20px;
-        border-radius:40px;
-    }
-    #filtering>option{
-        padding-top:20px;
-    }
-    option{
-        margin:20px;
     }

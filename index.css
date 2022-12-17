@@ -185,7 +185,13 @@ li{
     text-decoration: none;
     color:#eef2fb
 }
-
+a{
+    color:white
+}
+a:hover{
+    text-decoration: none;
+    color:rgb(189, 209, 231);
+}
 
 
 

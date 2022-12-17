@@ -96,7 +96,7 @@ background-color: yellow;
     
 }
 .logo img{
-    border-radius:40%;
+    border-radius:50%;
 }
 
 .hov:hover{
@@ -174,4 +174,19 @@ background-color: yellow;
     }
     .main{
         margin-top:30px;
+    }
+
+
+    /* ----span on cart--------- */
+
+    .show_count{
+        background-color: red;
+        width:25px;
+        height:25px;
+        border-radius:50%;
+        /* margin:-30px; */
+        margin-left:-120px;
+        /* margin-right:-150px */
+        margin-top:-25px;
+        text-align:center
     }

@@ -11,9 +11,11 @@
 <body>
     <div class="nav">.
         <div class="up">
+       
             <div class="logo hov">
-                <img src="./TRENDS.jpg" alt="">
-            </div>
+                <a href="index.html">  <img src="./TRENDS.jpg" alt=""></a>
+          
+              </div>
             <div class="search">
                 <input type="text" placeholder="enter">
                 <button class="hov"> <i class="fa-solid fa-magnifying-glass"></i></button>
@@ -99,8 +101,9 @@
                 <div class="hov"><i class="fa-regular fa-heart"></i></div>
 
                 <div class="hov"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <span class="show_count"></span>
 
-                <div class="hov"><i class="fa-solid fa-user"></i></div>
+                <div class="hov"><a href="signup.html"><i class="fa-solid fa-user"></i></a></div>
             </div>
         </div>
        </div>
@@ -144,9 +147,12 @@
 
 let cart_arr=JSON.parse(localStorage.getItem("cart"))||[]
 
+let count=0
 
+count=cart_arr.length
 function display_cards(res){
-    document.querySelector(".main").innerHTML=""
+           
+           document.querySelector(".main").innerHTML=""
 res.forEach((elem,i)=>{
 
     let card=document.createElement("div")
@@ -174,6 +180,10 @@ res.forEach((elem,i)=>{
         console.log(elem)
         cart_arr.push(elem)
         console.log(cart_arr)
+    
+        count=cart_arr.length
+        // console.log(count)
+        document.querySelector(".show_count").innerText=count
         localStorage.setItem("cart",JSON.stringify(cart_arr))
   })
     

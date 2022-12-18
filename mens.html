@@ -17,7 +17,7 @@
           
               </div>
             <div class="search">
-                <input type="text" placeholder="enter">
+                <input id="search_enter" type="text" placeholder="enter">
                 <button class="hov"> <i class="fa-solid fa-magnifying-glass"></i></button>
                
             </div>
@@ -106,12 +106,13 @@
                 <div class="hov"><a href="signup.html"><i class="fa-solid fa-user"></i></a></div>
             </div>
         </div>
+        
        </div>
 
 
 <!-- filter -->
 
-
+<div class="back">
 <select name="filter by name" id="filtering">
     <option value="Select">Filter by name</option>
     <option value="Adidas">Adidas</option>
@@ -138,6 +139,7 @@
 
 <!-- sorting -->
 
+</div>
        <div class="main">
       
        </div>
@@ -170,6 +172,8 @@ function display_cards(res){
            document.querySelector(".main").innerHTML=""
 res.forEach((elem,i)=>{
 
+
+    // ----creating card---------
     let card=document.createElement("div")
     card.setAttribute("class","card")
     let image=document.createElement("img")
@@ -190,7 +194,7 @@ res.forEach((elem,i)=>{
    
     let add=document.createElement("button")
     add.innerText="Add to Cart"
-
+add.setAttribute("class","hv")
   add.addEventListener("click",()=>{
         console.log(elem)
         cart_arr.push(elem)
@@ -210,6 +214,7 @@ res.forEach((elem,i)=>{
 }
 
 
+
 // filtering---------------------------
 
 document.querySelector("#filtering").addEventListener("change",(e)=>{
@@ -225,5 +230,48 @@ document.querySelector("#filtering").addEventListener("change",(e)=>{
 })
 
 
+
+
+
+
+// ----sorting------------
+document.querySelector("#sorting").addEventListener("change",(ele)=>{
+    // console.log(ele.target.value)
+    if(ele.target.value=="l2h"){
+       let sorted_arr=fil_arr.sort(function(a,b){
+     return  +a.price - +b.price})
+       display_cards(sorted_arr)
+    
+   
+    }
+    else if(ele.target.value=="h2l"){
+     let sorted_arr=fil_arr.sort(function(a,b){
+     return +b.price - +a.price})
+    
+
+     
+     display_cards(sorted_arr)
+     }
+    })
+
+// ------search-------------
+
+
+
+document.querySelector("#search_enter").addEventListener("input",(el)=>{
+    // console.log(el.target.value)
+
+    let searched_arr=fil_arr.filter((ele)=>{
+        return ele.name.toLowerCase().includes(el.target.value)
+
+    })
+    display_cards(searched_arr)
+})
+
+
+        
+      
+    // console.log(sorted_arr)
+    
 
 </script>

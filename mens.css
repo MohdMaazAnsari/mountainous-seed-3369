@@ -1,3 +1,11 @@
+
+body{
+    width:90%;
+    margin:auto;
+}
+/* .main{
+    width:10%;
+} */
 .nav>div{
     display:flex;
     justify-content:space-between;
@@ -24,7 +32,7 @@ img{
     width:100%;
 }
 .empty{
-    width:500px;
+    width:30%;
 }
 #search_enter{
     /* border:10px solid yellow */
@@ -147,14 +155,14 @@ background-color: rgb(78, 133, 222);
     .main{
         display:grid;
         grid-template-columns:repeat(4,1fr);
-        gap:100px;
+        gap:10px;
         margin:auto;
         margin-top:0px;
         /* border: 1px solid rgb(11, 10, 7); */
     }
 
     .card{
-        width:300px;
+        width:200px;
         margin:auto;
         margin:20px;
         padding: 25px;;
@@ -235,3 +243,70 @@ background-color: rgb(78, 133, 222);
         /* width:50px; */
         height:100px;
     }
+    .main{
+        background-color: rgb(230, 191, 133);
+    }
+
+    /* -------transmision-------- */
+    .card{
+        overflow: hidden;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.card:hover img{
+    transform: scale(1.2);
+}
+
+.card img{
+    transition:transform 2s;
+}
+
+img{
+    width:100%;
+}
+.card{
+    width:500px;
+}
+
+@media all and (min-width:1900px) and (max-width:2500px){
+
+    .main{
+        display:grid;
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+
+@media all and (min-width:0px) and (max-width:1899px){
+    .main{
+        display:grid;
+        grid-template-columns:repeat(1,1fr)
+    }
+}
+
+
+#footer{
+    margin-top: 50px;
+}
+#footer > #footera{
+display:grid ;
+grid-template-columns: repeat(4,1fr);
+font-size: 15px;
+background-color: #252628;
+color: whitesmoke;
+padding-top: 40px;
+padding-left: 80px;
+height: 300px;
+}
+#footer > #footerb{
+display: flex;
+/* justify-content: ; */
+}
+#footerba{
+    padding: 20px;
+}
+
+#footerbb{
+    display: flex;
+    justify-content: right;
+    width: 50%;
+   padding-left: 10px;
+}

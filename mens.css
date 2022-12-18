@@ -5,7 +5,7 @@
     
 }
 .nav{
-    border:1px solid red;
+    /* border:1px solid red; */
     position:sticky;
     z-index: 100;
     margin-top:0px;
@@ -26,6 +26,10 @@ img{
 .empty{
     width:500px;
 }
+#search_enter{
+    /* border:10px solid yellow */
+    outline:0
+}
 .search{
     width:700px;
     background-color: rgb(62, 60, 57);
@@ -42,7 +46,9 @@ img{
     flex:1;
     padding:10px ;
     font-size:20px;
-    border:none;
+    border:0px;
+    color:white
+    
 
 }
 
@@ -56,21 +62,21 @@ img{
      width:60px;
 }
 .search button:hover{
-    color:red;
-background-color: yellow;
+    color:rgb(51, 30, 30);
+background-color: rgb(78, 133, 222);
     cursor:pointer;
 }
 
 .submenu{
     /* display:flex; */
-    border:1px solid rgb(0, 174, 255);
+    /* border:1px solid rgb(80, 109, 123); */
     line-height: 30px;
     font-size: 30px;
     /* margin:auto; */
     /* margin:5px 30px 5px 30px; */
     /* padding-left:30px; */
     color:rgb(255, 255, 255);
-    background-color: black;
+    background-color: rgb(108, 61, 61);
     /* padding:20px; */
 
 }
@@ -78,20 +84,20 @@ background-color: yellow;
     display:flex;
     width:40%;
     justify-content:space-evenly;
-    border:1px solid green;
+    /* border:1px solid green; */
     padding:20px;
 
 }
 
 .icons{
     display:flex;
-    border:1px solid blue;
+    /* border:1px solid blue; */
     width:480px;
     justify-content: space-evenly;
     padding:20px
 }
 .category{
-    border:1px solid yellow;
+    /* border:1px solid rgb(61, 61, 53); */
     padding:20px
     
 }
@@ -141,15 +147,17 @@ background-color: yellow;
     .main{
         display:grid;
         grid-template-columns:repeat(4,1fr);
-        gap:30px;
+        gap:100px;
         margin:auto;
-        border: 1px solid orange;
+        margin-top:0px;
+        /* border: 1px solid rgb(11, 10, 7); */
     }
 
     .card{
         width:300px;
         margin:auto;
-        
+        margin:20px;
+        padding: 25px;;
     }
 
     .card>img{
@@ -176,19 +184,31 @@ background-color: yellow;
         margin-top:30px;
     }
 
-    #filtering{
+    #filtering ,#sorting{
         margin-top:30px;
         margin-left:50px;
         border:0px;
         background-color: rgb(123, 176, 158);
         padding:5px 20px 5px 20px;
         border-radius:40px;
+        background-color: transparent;
+        border:2px solid rgb(172, 137, 20)
     }
-    #filtering>option{
+    #filtering>option,#sorting>option{
         padding-top:20px;
+        margin:20px;
+        background-color: transparent;
+        
+    }
+    .hv:hover{
+        cursor:pointer;
+    }
+    option:hover{
+        background-color: gold;
     }
     option{
-        margin:20px;
+        margin:40px;
+        background-color: transparent;
     }
 
     /* -----cart------ */
@@ -204,4 +224,14 @@ background-color: yellow;
         /* margin-right:-150px */
         margin-top:-25px;
         text-align:center
+    }
+
+    .card{
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+/* background of select */
+    .back{
+        background-color:rgb(240, 230, 119);
+        /* width:50px; */
+        height:100px;
     }

@@ -5,14 +5,14 @@
     
 }
 .nav{
-    border:1px solid red;
+    /* border:1px solid red; */
     position:sticky;
     z-index: 100;
     margin-top:0px;
 }
 .up{
     color:aquamarine;
-    background-color: black;
+    background-color: rgb(29, 27, 21);
 }
 .logo{
     width:80px;
@@ -56,21 +56,21 @@ img{
      width:60px;
 }
 .search button:hover{
-    color:red;
-background-color: yellow;
+    color:rgb(51, 42, 42);
+background-color: rgb(66, 130, 208);
     cursor:pointer;
 }
 
 .submenu{
     /* display:flex; */
-    border:1px solid rgb(0, 174, 255);
+    /* border:1px solid rgb(102, 122, 131); */
     line-height: 30px;
     font-size: 30px;
     /* margin:auto; */
     /* margin:5px 30px 5px 30px; */
     /* padding-left:30px; */
     color:rgb(255, 255, 255);
-    background-color: black;
+    background-color: rgb(140, 66, 66);
     /* padding:20px; */
 
 }
@@ -78,20 +78,20 @@ background-color: yellow;
     display:flex;
     width:40%;
     justify-content:space-evenly;
-    border:1px solid green;
+    /* border:1px solid green; */
     padding:20px;
 
 }
 
 .icons{
     display:flex;
-    border:1px solid blue;
+    /* border:1px solid blue; */
     width:480px;
     justify-content: space-evenly;
     padding:20px
 }
 .category{
-    border:1px solid yellow;
+    /* border:1px solid yellow; */
     padding:20px
     
 }
@@ -148,7 +148,7 @@ grid-template-columns: repeat(5,1fr);
     /* border-radius:50%; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
-    border-ou
+    /* border-ou */
 }
 
 /* .select_{
@@ -220,8 +220,13 @@ h1{
 }
 
 
-
-
+h3{
+    text-align:center;
+}
+.brand_pic img{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
+padding:20px;
+}
 
 .gift img{
     border-radius:50%;
@@ -236,7 +241,7 @@ h1{
 .gift1 img{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
 }
-}
+
 
 
 

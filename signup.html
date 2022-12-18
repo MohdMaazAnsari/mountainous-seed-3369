@@ -5,10 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #top{
+    padding: 0px;
+    margin: 0px;
+}
+*{
+    /* background-color: rgb(114, 110, 74); */
+}
+#top{
+display: flex;
+height: 100vh;
+justify-content: center;
+align-items: center;
+/* background: url(form1.jpg); */
+/* background-color: antiquewhite; */
+background-position:center ;
+background-size: cover;
+/* border: 2px solid red; */
+}
+#main{
+    height: 550px;
+    width: 450px;
+    /* max-width:350px; */
+    background: rgba(0,0,0,0.5);
+    padding: 28px;
+    margin: 0px 28px;
+    border-radius: 10px;
+    box-shadow: inset  -2px 2px 2px white;
+    color: #fcdcdc;
+    /* padding: 25px; */
+}
+.name1{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+
+}
+.name2{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+
+}
+.name3{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+.name4{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+.name5{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+.name6{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+
+.allinput{
+ margin-left: 25px;   
+}
+
+#main{
+    font-size:30px;
+}
+#main input{
+    padding:10px;
+}
+
+
+
+.sub-btn{
+ margin-top: 40px;   
+ text-align: center;
+}
+
+
+
+    </style>
     <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+  
     <div class="nav">.
         <div class="up">
             <div class="logo hov">
@@ -104,3 +196,89 @@
             </div>
         </div>
        </div>
+     
+            
+     <!-- ---------------------------------------form--------------------------------------------------- -->
+<div id="top">
+    <div id="main">
+      <form id="form"> 
+       <div class="name1">
+        <label>Name</label><div class="allinput">
+          <input type="text" id="name"  placeholder="Enter Name here"> <br></div>
+       </div>
+    
+       <div class="name2">
+        <label>Mobile No.</label><div class="allinput">
+          <input type="text" id="mob" placeholder="Enter Mobile No. here"> <br>
+        </div>
+       </div>
+        
+       <div class="name3">
+        <label>Email Id</label><div class="allinput">
+          <input type="email" id="email"  placeholder="Enter Email Id here"> <br></div>
+        
+       </div>
+       
+       <div class="name4">
+        <label>Alternate No.</label><div class="allinput">
+          <input type="text" id="altn"  placeholder="Enter Alternate No. here"> <br>
+        </div>
+        
+       </div>
+        
+       <div class="name5">
+        <label>Address</label><div class="allinput"> 
+          <input type="text" id="address"  placeholder="Enter Address here"> <br>
+        </div>
+        
+        
+      </div>
+  
+  
+        <div class="name6">
+          <label>Pin-Code</label>
+          <div class="allinput">
+            <input type="text" id="pin"  placeholder="Enter Pin-Code here"> <br>
+          </div>
+          
+        </div>
+      
+      <div class="sub-btn">
+        <input type="submit" id="sub" value="Submit" >
+      </div>
+        
+      </form>
+    
+    
+    </div>
+    
+  </div>
+      </body>
+
+      </html>
+      <script>
+        formdata=document.querySelector("#form")
+        // let data=JSON.parse(localStorage.getItem("form"))||[]
+      
+      let data=[]
+      
+      formdata.addEventListener("submit",sub)
+          function sub(e){
+              e.preventDefault(e)
+              alert("Your Products has been placed for cash on delivery")
+          let form={
+              Name:formdata.name.value,
+              MobileNo:formdata.mob.value,
+              Email:formdata.email.value,
+              AlternateNumber:formdata.altn.value,
+              address:formdata.address.value,
+              PinCode:formdata.pin.value,
+          }
+          data.push(form)
+          // console.log(data)
+          localStorage.setItem("form",JSON.stringify(data))
+          
+      }
+      
+      
+      </script>

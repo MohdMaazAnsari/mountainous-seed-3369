@@ -189,7 +189,7 @@ background-color: rgb(78, 133, 222);
         color:rgb(189, 209, 231);
     }
     .main{
-        margin-top:30px;
+        /* margin-top:30px; */
     }
 
     #filtering ,#sorting{
